@@ -1,0 +1,39 @@
+.item {
+width: 80%;
+min-height: 50px;
+border: 1px solid white;
+border-radius: 10px;
+margin: 16px auto;
+padding: 10px;
+display: flex;
+text-align: center;
+align-items: center;
+justify-content: space-between;
+background-color: rgba(24, 21, 48, 0.788);
+}
+
+.itemDate {
+width: 20%;
+}
+
+.itemTitle {
+width: 60%;
+font-size: 20px;
+font-weight: 600;
+}
+
+.itemView {
+width: 20%;
+}
+
+.item:hover {
+  color: rgb(11, 251, 231);
+  border: 1px solid rgb(11, 251, 231);
+  background-color: rgba(24, 21, 48, 1);
+  transition: all 0.4s linear;
+}
+
+.item:active {
+  color: red;
+  transition: color 0.1s linear;
+}
