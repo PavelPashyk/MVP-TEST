@@ -1,9 +1,12 @@
-import './App.css';
-import { Main } from './pages/Main';
+import { BrowserRouter } from "react-router-dom";
+import "./App.css";
+import { RootRouter } from "./router";
 
 function App() {
   return (
-    <Main />
+    <BrowserRouter>
+      <RootRouter />
+    </BrowserRouter>
   );
 }
 

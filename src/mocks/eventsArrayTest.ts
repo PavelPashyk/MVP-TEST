@@ -37,8 +37,8 @@ export const eventsArrayTest = [
   {
     id: 6,
     viev: "Хоккей",
-    hosts: "Коламбус Блю Джекетс",
-    guests: " ",
+    hosts: "Коламбус",
+    guests: "Блю Джекетс",
     date: "21.01.2023",
   },
   {
