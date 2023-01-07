@@ -6,8 +6,8 @@ import styles from "./style.module.css";
 export const Details = () => {
   return (
     <WrapperBack>
-    <Header />
-    <EventItemFull />
-  </WrapperBack>
-  )
-}
+      <Header />
+      <EventItemFull />
+    </WrapperBack>
+  );
+};
