@@ -1,10 +1,10 @@
 .item {
   width: 80%;
-  min-height: 50px;
-  border: 1px solid white;
-  border-radius: 10px;
-  margin: 16px auto;
-  padding: 10px;
+  min-height: 3.125rem;
+  border: 0.0625rem solid white;
+  border-radius: 0.625rem;
+  margin: 1rem auto;
+  padding: 0.625rem;
   display: flex;
   text-align: center;
   align-items: center;
@@ -14,21 +14,23 @@
 
 .itemDate {
   width: 20%;
+  margin-right: 0.625rem;
 }
 
 .itemTitle {
   width: 60%;
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 600;
 }
 
 .itemView {
   width: 20%;
+  margin-left: 0.625rem;
 }
 
 .item:hover {
   color: rgb(11, 251, 231);
-  border: 1px solid rgb(11, 251, 231);
+  border: 0.0625rem solid rgb(11, 251, 231);
   background-color: rgba(24, 21, 48, 1);
   transition: all 0.4s linear;
 }
@@ -36,4 +38,41 @@
 .item:active {
   color: red;
   transition: color 0.1s linear;
+}
+
+@media (max-width: 68.75rem) {
+  .itemTitle {
+    font-size: 1.125rem;
+  }
+
+  .itemView,
+  .itemDate {
+    font-size: 0.9375rem;
+  }
+}
+
+@media (max-width: 37.5rem) {
+  .item {
+    flex-direction: column;
+    gap: 0.625rem;
+    width: 90%;
+  }
+
+  .itemTitle,
+  .itemView,
+  .itemDate {
+    width: 90%;
+  }
+
+  .itemTitle {
+    font-size: 1.0625rem;
+  }
+
+  .itemDate {
+    margin-right: 0rem;
+  }
+
+  .itemView {
+    margin-left: 0rem;
+  }
 }
