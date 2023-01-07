@@ -1,15 +1,15 @@
 .playerBlock {
   width: 70%;
-  min-height: 300px;
-  border: 1px solid white;
-  padding: 32px;
-  margin: 0 auto;
+  min-height: 18.75rem;
+  border: 0.0625rem solid white;
+  padding: 2rem;
+  margin: 2.5rem auto 0rem;
   background-color: rgba(24, 21, 48, 0.9);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 40px;
-  font-size: 24px;
+  gap: 2.5rem;
+  font-size: 1.5rem;
 }
 
 .playersViev,
@@ -20,7 +20,7 @@
 .playersBlock {
   width: 100%;
   display: flex;
-  gap: 20px;
+  gap: 1.25rem;
 }
 
 .playerHosts,
@@ -33,14 +33,14 @@
 }
 
 .playerTitle {
-  font-size: 40px;
+  font-size: 2.5rem;
   line-height: 150%;
-  padding-bottom: 10px;
+  padding-bottom: 0.625rem;
   text-align: center;
 }
 
 .playerPlace {
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 
 .bet {
@@ -49,6 +49,7 @@
   margin-bottom: 2rem;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
   border-radius: 0.3125rem;
   border: 0.0625rem solid gray;
   color: black;
@@ -84,4 +85,62 @@
 
 .betItem:not(:last-child) {
   border-right: 0.0625rem solid grey;
+}
+
+@media (max-width: 68.75rem) {
+  .playerBlock {
+    font-size: 1.25rem;
+    gap: 1.875rem;
+  }
+
+  .playersBlock {
+    gap: 1.875rem;
+  }
+
+  .playerTitle {
+    font-size: 1.875rem;
+    line-height: 140%;
+  }
+}
+
+@media (max-width: 50rem) {
+  .playerBlock {
+    gap: 1.25rem;
+    width: 80%;
+  }
+
+  .playersBlock {
+    flex-direction: column;
+  }
+
+  .playerHosts,
+  .playerGuests {
+    width: 100%;
+  }
+
+  .playerTitle {
+    font-size: 1.5625rem;
+    line-height: 130%;
+    font-weight: 600;
+  }
+
+  .playerPlace {
+    font-size: 1.125rem;
+  }
+
+  .bet {
+    width: 80%;
+    min-height: 6rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    margin-bottom: 1.125rem;
+  }
+
+  .betItem:not(:last-child) {
+    border-right: unset;
+  }
+
+  .betItem:not(:last-child) {
+    border-bottom: 0.0625rem solid grey;
+  }
 }

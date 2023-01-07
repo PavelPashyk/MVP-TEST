@@ -1,16 +1,16 @@
 .header {
   width: 100%;
-  min-height: 100px;
+  min-height: 5rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 48px;
+  margin-bottom: 1.25rem;
 }
 
 .title {
-  font-size: 48px;
+  font-size: 3rem;
   font-weight: 800;
-  letter-spacing: 3px;
+  letter-spacing: 0.1875rem;
   line-height: 150%;
   position: relative;
   user-select: none;
@@ -21,11 +21,11 @@
   content: "";
   display: block;
   position: absolute;
-  bottom: 0;
-  left: 0;
+  bottom: -0.3125rem;
+  left: 0rem;
   width: 25%;
   margin-left: 0%;
-  height: 2px;
+  height: 0.125rem;
   background: white;
   animation: lineInfinite 3s linear infinite;
   z-index: 1;
@@ -51,5 +51,29 @@
   100% {
     margin-left: 100%;
     width: 0%;
+  }
+}
+
+@media (max-width: 68.75rem) {
+  .header {
+    margin-bottom: 0.625rem;
+  }
+
+  .title {
+    font-size: 2.8125rem;
+    letter-spacing: 0.157rem;
+    line-height: 140%;
+  }
+}
+
+@media (max-width: 37.5rem) {
+  .header {
+    margin-bottom: 1.5625rem;
+  }
+
+  .title {
+    font-size: 2.5rem;
+    letter-spacing: 0.125rem;
+    line-height: 130%;
   }
 }

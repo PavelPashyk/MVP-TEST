@@ -1,7 +1,28 @@
 .eventsList {
-  padding: 32px 0px;
+  padding: 2rem 0rem;
 }
 
 .eventsText {
-  text-align:center;
+  text-align: center;
+  width: 100%;
+  padding: 0.3125rem 0rem;
+  margin: 0rem auto;
+  user-select: none;
+}
+
+@media (max-width: 68.75rem) {
+  .eventsList {
+    padding: 1.25rem 0rem;
+  }
+
+  .eventsText {
+    width: 80%;
+    font-size: 0.9375rem;
+  }
+}
+
+@media (max-width: 37.5rem) {
+  .eventsList {
+    padding: 0.625rem 0rem;
+  }
 }
