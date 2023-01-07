@@ -7,10 +7,15 @@ interface IPropsBtn {
   onClickBtn: () => void;
 }
 
-export const Button = ({type, text, disabled, onClickBtn }: IPropsBtn) => {
+export const Button = ({ type, text, disabled, onClickBtn }: IPropsBtn) => {
   return (
     <>
-      <button type={type} disabled={disabled} onClick={onClickBtn} className={styles.btn}>
+      <button
+        type={type}
+        disabled={disabled}
+        onClick={onClickBtn}
+        className={styles.btn}
+      >
         {text}
       </button>
     </>

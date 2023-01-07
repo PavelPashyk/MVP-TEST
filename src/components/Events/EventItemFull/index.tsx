@@ -1,12 +1,37 @@
-import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { ChangeEventHandler, useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import { eventsArrayTest } from "../../../mocks/eventsArrayTest";
 import { Button } from "../../Button";
 import styles from "./style.module.css";
 
 export const EventItemFull = () => {
+  const navigate = useNavigate();
   const { eventId } = useParams();
   const arrEvents = eventsArrayTest[Number(eventId) - 1];
+  const [disabled, setDisabled] = useState(true);
+  const [valueInput, setValueInput] = useState("");
+  const [result, setResult] = useState<string>();
+
+  const navigateToMain = () => {
+    navigate("/");
+  };
+
+  const handleOnChange: ChangeEventHandler<HTMLInputElement> = (e) => {
+    setValueInput(e.target.value);
+    e.target.value === "" ? setDisabled(disabled) : setDisabled(false);
+  };
+
+  useEffect(() => {
+    setResult(
+      `Спасибо, Ваша ставка на матч ${arrEvents.hosts} - ${arrEvents.guests}, ставка ${valueInput}, принята!`
+    );
+  }, [valueInput]);
+
+  const onClickBackMain = () => {
+    localStorage.setItem("resultBet", `${result}`);
+    navigateToMain();
+    setValueInput("");
+  };
 
   return (
     <div className={styles.playerBlock}>
@@ -22,38 +47,44 @@ export const EventItemFull = () => {
           <p className={styles.playerPlace}>гости</p>
         </div>
       </div>
-      <form className={styles.form} action="#">
-        <div className={styles.bet}>
-          <div className={styles.betItem}>
-            <input
-              id="radio-1"
-              type="radio"
-              name="radio"
-              value="на победу хозяев"
-            />
-            <label htmlFor="radio-1">на победу хозяев</label>
-          </div>
-          <div className={styles.betItem}>
-            <input id="radio-2" type="radio" name="radio" value="на ничью" />
-            <label htmlFor="radio-2">на ничью</label>
-          </div>
-          <div className={styles.betItem}>
-            <input
-              id="radio-3"
-              type="radio"
-              name="radio"
-              value="на победу гостей"
-            />
-            <label htmlFor="radio-3">на победу гостей</label>
-          </div>
+      <div className={styles.bet}>
+        <div className={styles.betItem}>
+          <input
+            id="radio-1"
+            type="radio"
+            name="radio"
+            value="на победу хозяев"
+            onChange={handleOnChange}
+          />
+          <label htmlFor="radio-1">на победу хозяев</label>
         </div>
-        <Button
-          type={"submit"}
-          text={"Сделать ставку"}
-          disabled={false}
-          onClickBtn={() => {}}
-        />
-      </form>
+        <div className={styles.betItem}>
+          <input
+            id="radio-2"
+            type="radio"
+            name="radio"
+            value="на ничью"
+            onChange={handleOnChange}
+          />
+          <label htmlFor="radio-2">на ничью</label>
+        </div>
+        <div className={styles.betItem}>
+          <input
+            id="radio-3"
+            type="radio"
+            name="radio"
+            value="на победу гостей"
+            onChange={handleOnChange}
+          />
+          <label htmlFor="radio-3">на победу гостей</label>
+        </div>
+      </div>
+      <Button
+        type={"submit"}
+        text={"Сделать ставку"}
+        disabled={disabled}
+        onClickBtn={onClickBackMain}
+      />
     </div>
   );
 };

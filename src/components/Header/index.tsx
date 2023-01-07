@@ -5,5 +5,5 @@ export const Header = () => {
     <div className={styles.header}>
       <h1 className={styles.title}>Ставки на спорт</h1>
     </div>
-  )
-}
+  );
+};
